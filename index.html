@@ -8,23 +8,24 @@
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  
-  <button class="1 num">1</button>
-  <button class="2 num">2</button>
-  <button class="3 num">3</button>
-  <button class="4 num">4</button>
-  <button class="5 num">5</button>
-  <button class="6 num">6</button>
-  <button class="7 num">7</button>
-  <button class="8 num">8</button>
-  <button class="9 num">9</button>
-  <button class="0 num">0</button>
-  <button class="add operator">+</button>
-  <button class="subtract operator">-</button>
-  <button class="multiply operator">x</button>
-  <button class="divide operator">&#247;</button>
-  <button class="equal">=</button>
-  <button class="clear">Clear</button>
+
+  <div class="currentOperation">0</div>
+  <button class="one num" onclick="firstOrSecond(1)">1</button>
+  <button class="two num" onclick="firstOrSecond(2)">2</button>
+  <button class="three num" onclick="firstOrSecond(3)">3</button>
+  <button class="four num" onclick="firstOrSecond(4)">4</button>
+  <button class="five num" onclick="firstOrSecond(5)">5</button>
+  <button class="six num" onclick="firstOrSecond(6)">6</button>
+  <button class="seven num" onclick="firstOrSecond(7)">7</button>
+  <button class="eight num" onclick="firstOrSecond(8)">8</button>
+  <button class="nine num" onclick="firstOrSecond(9)">9</button>
+  <button class="zero num" onclick="firstOrSecond(0)">0</button>
+  <button class="add operator" onclick="setCurrentOperation('+')">+</button>
+  <button class="subtract operator" onclick="setCurrentOperation('-')">-</button>
+  <button class="multiply operator" onclick="setCurrentOperation('*')">x</button>
+  <button class="divide operator" onclick="setCurrentOperation('/')">&#247;</button>
+  <button class="equal" onclick="operate(firstNum, currentOperator, secondNum)">=</button>
+  <button class="clear" onclick="clearScreen()">Clear</button>
   <button class="delete">Delete</button>
 
 </body>
