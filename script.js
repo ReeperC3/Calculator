@@ -48,7 +48,13 @@ function setCurrentOperation(operator) {
   } else if (firstNum !== undefined && secondNum === undefined) {
     currentOperator = operator;
     currentOperation.textContent = `${firstNum} ${currentOperator}`
-  } 
+  } else if (currentOperator !== '' && secondNum !== undefined) {
+    let newFirst = operate(firstNum, currentOperator, secondNum);
+    firstNum = newFirst;
+    currentOperator = operator;
+    secondNum = 0;
+    currentOperation.textContent = `${firstNum} ${currentOperator}`;
+  }
 }
 let answer = undefined
 function operate(num1, operator, num2) {
@@ -62,6 +68,7 @@ function operate(num1, operator, num2) {
     answer = divide(num1, num2);
   }
   currentOperation.textContent = `${firstNum} ${currentOperator} ${secondNum} = ${answer}`
+  return answer;
 }
 
 function clearScreen() {
@@ -78,7 +85,7 @@ function add(num1, num2) {
 }
 
 function subtract(num1, num2) {
-  num = num1 + num2;
+  num = num1 - num2;
   return num;
 }
 
