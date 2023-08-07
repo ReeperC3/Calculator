@@ -22,22 +22,36 @@ const delet = document.querySelector('.delete');
 let currentOperator = '';
 let firstNum = undefined;
 let secondNum = undefined;
+let decimalHalf = undefined;
 function firstOrSecond(num) {
   if (firstNum === undefined && currentOperator === '') {
     firstNum = num;
     currentOperation.textContent = firstNum;
+  } else if (firstNum === 0 && decimalHalf === undefined) {
+    decimalHalf = num
+    currentOperation.textContent = `${firstNum}.${decimalHalf}`
   } else if (firstNum !== undefined && currentOperator === '') {
-    firstNum *= 10;
-    firstNum += num;
     currentOperation.textContent = firstNum;
+    currentOperation.textContent += num;
+    firstNum = currentOperation.textContent;
   } else if (currentOperator !== '' && firstNum !== undefined && secondNum === undefined) {
-    secondNum = num
+    secondNum = num;
     currentOperation.textContent = `${firstNum} ${currentOperator} ${secondNum}`
   } else if (currentOperator !== '' && firstNum !== undefined && secondNum !== undefined) {
-    secondNum *= 10;
-    secondNum += num;
     currentOperation.textContent = `${firstNum} ${currentOperator} ${secondNum}`
+    currentOperation.textContent += num;
   }
+}
+
+function addPoint() {
+  if (currentOperation.textContent.includes('.')) return;
+  if (firstNum === undefined || firstNum === 0) {
+    firstNum = '0.';
+    currentOperation.textContent += '.';
+  } else if (firstNum !== undefined) {
+    firstNum = `${firstNum}.`
+    currentOperation.textContent += '.';
+  } 
 }
 
 function setCurrentOperation(operator) {
@@ -68,7 +82,29 @@ function operate(num1, operator, num2) {
     answer = divide(num1, num2);
   }
   currentOperation.textContent = `${firstNum} ${currentOperator} ${secondNum} = ${answer}`
+  firstNum = answer;
+  currentOperator = '';
+  secondNum = undefined;
   return answer;
+}
+
+function deleteLast() {
+  if (firstNum !== undefined && currentOperator !== '' && secondNum === undefined) {
+    currentOperator = ''
+    currentOperation.textContent = `${firstNum}`
+  } else if (secondNum !== undefined) {
+    secondNum = undefined;
+    currentOperation.textContent = `${firstNum} ${currentOperator}`
+  } else if (firstNum !== undefined && currentOperator === '') {
+    firstNum = undefined
+    currentOperation.textContent = 0;
+  } else {
+    return;
+  }
+}
+
+function decimal() {
+  currentOperation.textContent += '.';
 }
 
 function clearScreen() {

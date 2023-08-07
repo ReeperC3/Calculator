@@ -1,0 +1,62 @@
+.all {
+  display: grid;
+  margin-top: 100px;
+  grid: 
+  'display display display display'
+  'clear clear delete delete'
+  'one two three add'
+  'four five six subtract'
+  'seven eight nine multiply'
+  'decimal zero equal divide'; 
+  gap: 10px;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 500px;
+  height: 700px;
+  margin: auto;
+}
+
+.currentOperation {grid-area: display;}
+.one {grid-area: one;}
+.two {grid-area: two;}
+.three {grid-area: three;}
+.four {grid-area: four;}
+.five {grid-area: five;}
+.six {grid-area: six;}
+.seven {grid-area: seven;}
+.eight {grid-area: eight;}
+.nine {grid-area: nine;}
+.zero {grid-area: zero;}
+.add {grid-area: add;}
+.subtract {grid-area: subtract;}
+.multiply {grid-area: multiply;}
+.divide {grid-area: divide;}
+.equal {grid-area: equal;}
+.clear {grid-area: clear;}
+.delete {grid-area: delete;}
+.decimal {grid-area: decimal;}
+
+.num {
+  padding: 10px;
+}
+
+.clear {
+  background-color: blue;
+  padding: 10px;
+}
+
+.delete {
+  background-color: red;
+  padding: 10px;
+}
+
+.currentOperation {
+  background-color: beige;
+  border: 5px;
+  border-radius: 10px;
+  border-color: black;
+  text-align: right;
+  padding-top: 20px;
+  font-size: 30px;
+}

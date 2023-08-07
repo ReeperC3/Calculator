@@ -9,24 +9,27 @@
 </head>
 <body>
 
-  <div class="currentOperation">0</div>
-  <button class="one num" onclick="firstOrSecond(1)">1</button>
-  <button class="two num" onclick="firstOrSecond(2)">2</button>
-  <button class="three num" onclick="firstOrSecond(3)">3</button>
-  <button class="four num" onclick="firstOrSecond(4)">4</button>
-  <button class="five num" onclick="firstOrSecond(5)">5</button>
-  <button class="six num" onclick="firstOrSecond(6)">6</button>
-  <button class="seven num" onclick="firstOrSecond(7)">7</button>
-  <button class="eight num" onclick="firstOrSecond(8)">8</button>
-  <button class="nine num" onclick="firstOrSecond(9)">9</button>
-  <button class="zero num" onclick="firstOrSecond(0)">0</button>
-  <button class="add operator" onclick="setCurrentOperation('+')">+</button>
-  <button class="subtract operator" onclick="setCurrentOperation('-')">-</button>
-  <button class="multiply operator" onclick="setCurrentOperation('*')">x</button>
-  <button class="divide operator" onclick="setCurrentOperation('/')">&#247;</button>
-  <button class="equal" onclick="operate(firstNum, currentOperator, secondNum)">=</button>
-  <button class="clear" onclick="clearScreen()">Clear</button>
-  <button class="delete">Delete</button>
+  <div class="all">
+    <div class="currentOperation">0</div>
+    <button class="one num" onclick="firstOrSecond(1)">1</button>
+    <button class="two num" onclick="firstOrSecond(2)">2</button>
+    <button class="three num" onclick="firstOrSecond(3)">3</button>
+    <button class="four num" onclick="firstOrSecond(4)">4</button>
+    <button class="five num" onclick="firstOrSecond(5)">5</button>
+    <button class="six num" onclick="firstOrSecond(6)">6</button>
+    <button class="seven num" onclick="firstOrSecond(7)">7</button>
+    <button class="eight num" onclick="firstOrSecond(8)">8</button>
+    <button class="nine num" onclick="firstOrSecond(9)">9</button>
+    <button class="zero num" onclick="firstOrSecond(0)">0</button>
+    <button class="add operator" onclick="setCurrentOperation('+')">+</button>
+    <button class="subtract operator" onclick="setCurrentOperation('-')">-</button>
+    <button class="multiply operator" onclick="setCurrentOperation('*')">x</button>
+    <button class="divide operator" onclick="setCurrentOperation('/')">&#247;</button>
+    <button class="equal" onclick="operate(firstNum, currentOperator, secondNum)">=</button>
+    <button class="clear" onclick="clearScreen()">Clear</button>
+    <button class="delete" onclick="deleteLast()">Delete</button>
+    <button class="decimal" onclick="addPoint()">.</button>
+  </div>
 
 </body>
 </html>
